@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Inicio from '../views/Inicio.vue'
+
 
 Vue.use(VueRouter)
 
@@ -8,8 +8,19 @@ const routes = [
   {
     path: '/',
     name: 'Inicio',
-    component: Inicio,
-    
+    component: () => import ('../views/Inicio.vue'),
+  },
+  {
+    path: '/inicio',
+    redirect: '/'
+  },
+  {
+    path: '/home',
+    redirect: '/'
+  },
+  {
+    path: '/portada',
+    redirect: '/'
   },
   {
     path: '/sobremi',
