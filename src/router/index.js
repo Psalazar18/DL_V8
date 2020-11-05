@@ -8,22 +8,31 @@ const routes = [
   {
     path: '/',
     name: 'Inicio',
-    component: Inicio
+    component: Inicio,
+    
   },
   {
     path: '/sobremi',
     name: 'SobreMi',
+    alias: ['/acerca'],
     component: () => import ('../views/SobreMi.vue')
   },
   {
     path: '/contacto',
     name: 'Contacto',
+    alias: ['/contactame'],
     component: () => import ('../views/Contacto.vue')
   },
   {
     path: '/post/:id',
     name: 'Post',
     component: () => import ('../views/Articulo.vue')
+  },
+  {
+    path: '/administrador/:type',
+    name: 'Administrador',
+    props: true,
+    component: () => import ('../views/Administrador.vue')
   },
   {
     path: '*',
